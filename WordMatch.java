@@ -7,7 +7,9 @@ public class WordMatch {
      * Constructs a WordMatch object with the given secret string of lowercase
      * letters.
      */
-    public WordMatch(String word) {
+    public WordMatch(String word) 
+    {
+        secret = word;
         /* implementation not shown */
     }
 
@@ -26,7 +28,7 @@ public class WordMatch {
                 score++;
             }
         }
-        return 0;
+        return score * guess.length() * guess.length();
     }
 
 
@@ -36,8 +38,22 @@ public class WordMatch {
      * Precondition: guess1 and guess2 contain all lowercase letters.
      * guess1 is not the same as guess2.
      */
-    public String findBetterGuess(String guess1, String guess2) {
-        return null;
+    public String findBetterGuess(String guess1, String guess2) 
+    {
+        if(scoreGuess(guess1) > scoreGuess(guess2))
+        {
+            return guess1;
+        }
+        if(scoreGuess(guess2) > scoreGuess(guess1))
+        {
+            return guess2;
+        }
+        if(guess1.compareTo(guess2) > 0)
+        {
+            return guess1;
+        } else{
+            return guess2;
+        }
     }
 }
 
