@@ -15,5 +15,12 @@ public class Main
         System.out.println(game.scoreGuess("con"));
         System.out.println(game.scoreGuess("cat"));
         System.out.println(game.findBetterGuess("con", "cat"));
+
+        WordMatch game2 = new WordMatch("aaaabb");
+        System.out.println(game2.scoreGuess("a"));
+        System.out.println(game2.scoreGuess("aa"));
+        System.out.println(game2.scoreGuess("aaa"));
+        System.out.println(game2.scoreGuess("aabb"));
+        System.out.println(game2.scoreGuess("c"));
     }
 }
